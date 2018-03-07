@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := oscam
-PKG_REV := 11398
+PKG_REV := 11401
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
@@ -129,11 +129,8 @@ define Package/oscam/conffiles
 endef
 
 define Package/oscam/install
-	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam $(1)/usr/sbin/oscam
-
-	$(INSTALL_DIR) $(1)/etc/oscam
-	$(CP) $(PKG_BUILD_DIR)/Distribution/doc/example/* $(1)/etc/oscam/
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam $(1)/usr/bin/oscam
 
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/oscam.init $(1)/etc/init.d/oscam
