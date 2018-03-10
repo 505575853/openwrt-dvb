@@ -12,7 +12,8 @@ PKG_REV := 32d7b43
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
-PKG_SOURCE_PROTO := svn
+PKG_SOURCE_PROTO:= git
+#PKG_SOURCE_PROTO := svn
 PKG_SOURCE_VERSION := $(PKG_REV)
 PKG_SOURCE_URL := https://github.com/nx111/oscam.git
 #PKG_SOURCE_URL := http://www.streamboard.tv/svn/oscam/trunk
