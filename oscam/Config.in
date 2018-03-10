@@ -5,30 +5,30 @@ config OSCAM_USE_LIBCRYPTO
 	bool "Build with OpenSSL libcrypto"
 	help
 		"Use OpenSSL libcrypto instead of OSCam internal crypto functions"
-	default n
+	default y
 
 config OSCAM_USE_LIBUSB
 	bool
-	default n
+	default y
 
 	menu "Protocols"
 	depends on PACKAGE_oscam
 
 	config OSCAM_MODULE_CAMD33
 		bool "camd 3.3"
-		default n
+		default y
 
 	config OSCAM_MODULE_CAMD35
 		bool "camd 3.5 UDP"
-		default n
+		default y
 
 	config OSCAM_MODULE_CAMD35_TCP
 		bool "camd 3.5 TCP"
-		default n
+		default y
 
 	config OSCAM_MODULE_NEWCAMD
 		bool "newcamd"
-		default n
+		default y
 
 	config OSCAM_MODULE_CCCAM
 		bool "CCcam"
@@ -36,35 +36,35 @@ config OSCAM_USE_LIBUSB
 
 	config OSCAM_MODULE_CCCSHARE
 		bool "CCcam share"
-		default n
+		default y
 
 	config OSCAM_MODULE_GBOX
 		bool "gbox"
-		default n
+		default y
 
 	config OSCAM_MODULE_RADEGAST
 		bool "radegast"
-		default n
+		default y
 
 	config OSCAM_MODULE_SERIAL
 		bool "Serial"
-		default n
+		default y
 
 	config OSCAM_MODULE_CONSTCW
 		bool "constant CW"
-		default n
+		default y
 
 	config OSCAM_MODULE_PANDORA
 		bool "Pandora"
-		default n
+		default y
 
 	config OSCAM_MODULE_GHTTP
 		bool "Ghttp"
-		default n
+		default y
 
 	config OSCAM_MODULE_SCAM
 		bool "scam"
-		default n
+		default y
 
 	endmenu
 
@@ -73,51 +73,51 @@ config OSCAM_USE_LIBUSB
 
 	config OSCAM_READER_NAGRA
 		bool "Nagravision"
-		default n
+		default y
 
 	config OSCAM_READER_IRDETO
 		bool "Irdeto"
-		default n
+		default y
 
 	config OSCAM_READER_CONAX
 		bool "Conax"
-		default n
+		default y
 
 	config OSCAM_READER_CRYPTOWORKS
 		bool "Cryptoworks"
-		default n
+		default y
 
 	config OSCAM_READER_SECA
 		bool "Seca"
-		default n
+		default y
 
 	config OSCAM_READER_VIACCESS
 		bool "Viaccess"
-		default n
+		default y
 
 	config OSCAM_READER_VIDEOGUARD
 		bool "NDS Videoguard"
-		default n
+		default y
 
 	config OSCAM_READER_DRE
 		bool "DRE Crypt"
-		default n
+		default y
 
 	config OSCAM_READER_TONGFANG
 		bool "Tongfang"
-		default n
+		default y
 
 	config OSCAM_READER_BULCRYPT
 		bool "Bulcrypt"
-		default n
+		default y
 
 	config OSCAM_READER_GRIFFIN
 		bool "Griffin"
-		default n
+		default y
 
 	config OSCAM_READER_DGCRYPT
 		bool "DGCrypt"
-		default n
+		default y
 
 	endmenu
 
@@ -127,36 +127,36 @@ config OSCAM_USE_LIBUSB
 	config OSCAM_USE_PCSC
 		bool "PCSC compatible readers"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_PHOENIX
 		bool "Phoenix/mouse USB readers"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_SC8IN1
 		bool "SC8in1"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_MP35
 		bool "AD-Teknik MP 3.6/USB Phoenix"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_SMARGO
 		bool "Argolis Smargo Smartreader"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_STINGER
 		bool "Stinger USB Dual Smartcard Reader"
 		select OSCAM_USE_LIBUSB
-		default n
+		default y
 
 	config OSCAM_CARDREADER_DRECAS
 		bool "DRECAS reader"
-		default n
+		default y
 
 	endmenu
 
@@ -171,7 +171,7 @@ config OSCAM_READ_SDT_CHARSETS
 
 config OSCAM_IRDETO_GUESSING
 	bool "Irdeto guessing"
-	default n
+	default y
 
 config OSCAM_CS_ANTICASC
 	bool "Anti cascading"
@@ -179,11 +179,11 @@ config OSCAM_CS_ANTICASC
 
 config OSCAM_WITH_DEBUG
 	bool "Debug messages"
-	default n
+	default y
 
 config OSCAM_MODULE_MONITOR
 	bool "Monitor"
-	default n
+	default y
 
 config OSCAM_WITH_LB
 	bool "Loadbalancing"
@@ -215,27 +215,27 @@ config OSCAM_IPV6SUPPORT
 
 config OSCAM_WEBIF
 	bool "Web Interface"
-	default n
+	default y
 
 	config OSCAM_WEBIF_LIVELOG
 		bool "LiveLog"
 		depends on OSCAM_WEBIF
-		default n
+		default y
 
 	config OSCAM_WEBIF_JQUERY
 		bool "Jquery onboard (if disabled webload)"
 		depends on OSCAM_WEBIF
-		default n
+		default y
 
 	config OSCAM_TOUCH
 		bool "Touch Web Interface"
 		depends on OSCAM_WEBIF
-		default n
+		default y
 
 	config OSCAM_WITH_SSL
 		bool "SSL support"
 		depends on OSCAM_WEBIF
 		select OSCAM_USE_LIBCRYPTO
-		default n
+		default y
 
 endmenu
