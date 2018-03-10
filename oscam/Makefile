@@ -7,13 +7,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME := oscam
-PKG_REV := 11401
+PKG_REV := 32d7b43
+#PKG_REV := 11401
 PKG_VERSION := 1.20-$(PKG_REV)
 PKG_RELEASE := 1
 
 PKG_SOURCE_PROTO := svn
 PKG_SOURCE_VERSION := $(PKG_REV)
-PKG_SOURCE_URL := http://www.streamboard.tv/svn/oscam/trunk
+PKG_SOURCE_URL := https://github.com/nx111/oscam.git
+#PKG_SOURCE_URL := http://www.streamboard.tv/svn/oscam/trunk
 #PKG_SOURCE_URL := http://www.oscam.cc/svn/oscam-mirror/trunk
 
 PKG_LICENSE := GPL-3.0
@@ -132,11 +134,14 @@ define Package/oscam/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam $(1)/usr/bin/oscam
 
+	$(INSTALL_DIR) $(1)/etc/oscam
+	$(CP) $(PKG_BUILD_DIR)/Distribution/doc/example/* $(1)/etc/oscam/
+	$(INSTALL_CONF) ./files/oscam.conf $(1)/etc/oscam/oscam.conf
+	$(INSTALL_CONF) ./files/oscam.user $(1)/etc/oscam/oscam.user
+
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/oscam.init $(1)/etc/init.d/oscam
 
-	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) ./files/oscam.conf $(1)/etc/config/oscam
 endef
 
 define Package/list-smargo/install
