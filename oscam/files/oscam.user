@@ -1,0 +1,12 @@
+#
+# user configuration
+#
+
+# user for group 1 with Betacrypt tunnel, no monitoring, only one connection possible, AU enabled
+
+[account]
+user                          = dvbapi
+pwd                           = dvbapi
+group                         = 1
+au                            = 1
+uniq                          = 0
